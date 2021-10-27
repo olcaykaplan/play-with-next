@@ -1,0 +1,13 @@
+.card{
+padding:  2rem 3rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border-radius: 0.5rem;
+background-color: #b3b2b2;
+color: steelblue;
+}
+.productImg{
+    height: 200px;
+}

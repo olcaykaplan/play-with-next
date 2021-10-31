@@ -2,6 +2,8 @@ import { Grid } from "@material-ui/core";
 import React from "react";
 import ProductItem from "./ProductItem";
 import classes from "./productList.module.css";
+import Link from "next/link";
+
 function ProductList({ products }) {
   return (
     <Grid

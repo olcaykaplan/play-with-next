@@ -7,11 +7,10 @@ import ProductList from "../components/ProductList";
 
 function HomePage(props) {
     return (
-        <div className="main-content">
-            <Typography variant="h3" style={{marginBottom:"20px"}}>Products</Typography>
-           <ProductList  products={props.products} />
-        </div>
-
+       
+    <div>
+        Home Page
+    </div>
        
     )
 }

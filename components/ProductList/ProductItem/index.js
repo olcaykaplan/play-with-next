@@ -1,45 +1,28 @@
 import {
-  Avatar,
-    Box,
+  Box,
   Card,
   CardActions,
   CardContent,
   CardHeader,
   CardMedia,
-  Collapse,
   IconButton,
   Typography,
 } from "@material-ui/core";
 import {
-  ExpandMore,
   Favorite,
-  MoreVert,
   Share,
   Star,
 } from "@material-ui/icons";
 import React from "react";
 import classes from "./productItem.module.css";
-// import {Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, IconButton, Typography} from '@material-ui/core';
-// import {FavoriteIcon, ShareIcon, ExpandMoreIcon, MoreVertIcon} from '@mui/icons-material';
 
-// import CardHeader from '@mui/material/CardHeader';
-// import CardMedia from '@mui/material/CardMedia';
-// import CardContent from '@mui/material/CardContent';
-// import CardActions from '@mui/material/CardActions';
-// import Collapse from '@mui/material/Collapse';
-// import Avatar from '@mui/material/Avatar';
-// import IconButton from '@mui/material/IconButton';
-// import Typography from '@mui/material/Typography';
-// import { red } from '@mui/material/colors';
-// import FavoriteIcon from '@mui/icons-material/Favorite';
-// import ShareIcon from '@mui/icons-material/Share';
-// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Link from "next/link";
 
 function ProductItem({ product }) {
   return (
     <Card variant="outlined" className={classes.card}>
-      <CardHeader title={product.title} className={classes.cardHeader} />
+        
+   <CardHeader title={product.title} className={classes.cardHeader} /> 
       <CardMedia
         component="img"
         className={classes.cardMedia}
@@ -63,9 +46,9 @@ function ProductItem({ product }) {
         </IconButton>
         <Box>
         <Typography float="right">
-          {product.price} 
+          ${product.price} 
 
-            <Typography variant="display1" >({product.rating.rate} <Star fontSize="small" color="primary" />)</Typography>
+            <Typography variant="display1" > ({product.rating.rate} <Star fontSize="small" color="primary" />)</Typography>
             
           
         </Typography>

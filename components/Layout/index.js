@@ -6,9 +6,9 @@ import classes from './layout.module.css';
 
 function Layout(props) {
   return (
-    <Fragment className={classes.main}>
+    <Fragment >
       <Header/>
-      <main>{props.children}</main>
+      <main className={classes.main}>{props.children}</main>
       <Footer/>
     </Fragment>
   );

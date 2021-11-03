@@ -6,9 +6,10 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import ProductImage from "../../components/ProductDetails/ProductImage";
 import Details from "../../components/ProductDetails/Details";
-
+import Head from 'next/head'
 export async function getStaticPaths() {
-  //pre-generator of dynamic pages
+  //pre-generator of dynamic pages here 
+  // tell the next js how many pages will be made
   const { data } = await axios.get("https://fakestoreapi.com/products");
   const paths = data.map((product) => {
     return {
@@ -21,7 +22,11 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context) {
+export const getStaticProps = async (context) => {
+  
+  // after getStaticPaths each created page will run this function
+  // and fetch each item we need and then will return data to component (product)
+  // so it will generate a template for each of these pages
   const productId = context.params.productId;
   const { data } = await axios.get(
     `https://fakestoreapi.com/products/${productId}`
@@ -32,18 +37,20 @@ export async function getStaticProps(context) {
     props: {
       product: SELECTED_PRODUCT,
     },
-    revalidate: 1,
   };
 }
 const DyamicPage = ({ product }) => {
- 
-  // send a request to do Backedn API
-  // to fetch information of the selected product in product list page
+  // 
   return (
-    <Grid container justify="center">
-     <ProductImage productImage={product.image}/>
-     <Details product={product}/>
-    </Grid>
+    <>
+      <Head>
+        <title>Next | Product Detail</title>
+      </Head>
+      <Grid container justify="center">
+        <ProductImage productImage={product.image} />
+        <Details product={product} />
+      </Grid>
+    </>
   );
 };
 

@@ -1,6 +1,10 @@
-import { Grid, Typography, Box } from "@material-ui/core"
+import { Grid, Typography, Box, Button } from "@material-ui/core"
+import axios from "axios"
 
 const Details = ({product}) =>  {
+    const addToCart = async () => {
+        await axios('/api/add-toCart')
+    }
     return (
      <Grid xl={6} lg={6} md={6} sm={12} xs={12}>
          <Typography variant="h4">{product.title}</Typography>
@@ -11,7 +15,8 @@ const Details = ({product}) =>  {
          <hr/>
          <Typography variant="body1">{product.description}</Typography>
          </Box>
-
+         <hr/>
+         <Button variant="contained" color="primary" onClick={addToCart}>Add to Cart</Button>   
       </Grid>
     )
 }

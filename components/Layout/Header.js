@@ -6,11 +6,11 @@ function Header() {
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <Link href='/'>Play Next</Link>
+        <Link href='/products'>Play Next</Link>
       </div>
       <nav className={classes.navigation}>
         <ul>
-          <li>
+          <li> 
            
           </li>
         </ul>

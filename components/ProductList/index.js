@@ -19,7 +19,7 @@ function ProductList({ products }) {
       justify="center"
     >
       {products.map((p) => (
-        <ProductItem product={p} />
+        <ProductItem product={p} key={p.id}/>
       ))}
     </Grid>
   );
